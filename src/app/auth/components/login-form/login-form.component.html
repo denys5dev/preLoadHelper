@@ -1,0 +1,23 @@
+
+<form (submit)="submit($event)">
+  <dx-form  #loginForm
+           [formData]="authUser"
+           [showColonAfterLabel]="true"
+           [showValidationSummary]="true"
+           validationGroup="loginForm">
+    <dxi-item itemType="group" caption="Credentials">
+      <dxi-item dataField="username">
+        <dxi-validation-rule type="required" message="Username is required"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="password" [editorOptions]="{ mode: 'password'}">
+        <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
+      </dxi-item>
+    </dxi-item>
+    <dxi-item
+      itemType="button"
+      alignment="left"
+      [buttonOptions]="buttonOptions"
+    ></dxi-item>
+  </dx-form>
+
+</form>
